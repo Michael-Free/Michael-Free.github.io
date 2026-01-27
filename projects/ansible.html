@@ -190,7 +190,7 @@
 <li>Automated GitHub Pages updates and releases</li>
 <li>Cross-platform orchestration between self-hosted Gitea and GitHub</li>
 </ul>
-<p><strong>Impact:</strong> Reduced website publishing to a fully automated, repeatable process, eliminated manual deployment errors, and ensured consistent, traceable releases—turning a multi-step deployment into a single automated action.</p>
+<p><strong>Impact:</strong> Reduced website publishing to a fully automated, repeatable process, eliminated manual deployment errors, and ensured consistent, traceable releases...turning a multi-step deployment into a single automated action.</p>
 <h2 id="employee-offboarding">Employee Offboarding</h2>
 <h3 id="hybrid-ad-microsoft-365-deprovisioning-with-ansible">Hybrid AD &amp; Microsoft 365 Deprovisioning with Ansible</h3>
 <p>Designed and implemented an end-to-end Ansible-driven employee offboarding system that automates identity deprovisioning across on-prem Active Directory and Microsoft 365.</p>
@@ -273,7 +273,7 @@
 <h2 id="digital-signage-platform">Digital Signage Platform</h2>
 <h3 id="custom-linux-distribution-automation-with-ansible">Custom Linux Distribution &amp; Automation with Ansible</h3>
 <p>Architected and deployed a fully automated digital signage platform managed end-to-end with Ansible, replacing an unreliable, freemium Windows-based solution that had effectively become abandonware.</p>
-<p>The legacy system caused frequent outages, frozen players, disruptive OS notifications, and required on-site manual intervention—often involving ladder access to power-cycle devices. Windows updates, advertisements, and OS instability made reliable video playback impossible at scale.</p>
+<p>The legacy system caused frequent outages, frozen players, disruptive OS notifications, and required on-site manual intervention...often involving ladder access to power-cycle devices. Windows updates, advertisements, and OS instability made reliable video playback impossible at scale.</p>
 <p>To solve this, I built a custom minimal Debian-based distribution, designed specifically for digital signage reliability. The operating system installation was fully automated using Debian preseed, producing a custom ISO with no interactive setup. A dedicated systemd service ensured the latest campaign video played continuously and reliably on boot.</p>
 <p>A suite of Ansible playbooks provided centralized control of all signage players across multiple remote branches, enabling:</p>
 <ul>
@@ -291,12 +291,12 @@
 <li>Zero-touch provisioning with Debian preseed</li>
 <li>Fallback web management via Cockpit</li>
 </ul>
-<p><strong>Impact:</strong> Eliminated routine on-site service visits, drastically reduced support calls related to digital signage failures, and transformed digital signage from a recurring operational burden into a stable, self-maintaining platform—freeing the IT services team to focus on higher-value work.</p>
+<p><strong>Impact:</strong> Eliminated routine on-site service visits, drastically reduced support calls related to digital signage failures, and transformed digital signage from a recurring operational burden into a stable, self-maintaining platform...freeing the IT services team to focus on higher-value work.</p>
 <h2 id="ssl-certificate-management">SSL Certificate Management</h2>
 <h3 id="automated-ssl-enablement-with-ansible">Automated SSL Enablement with Ansible</h3>
 <p>Identified and remediated a security gap where internally hosted web applications were operating over unencrypted HTTP, exposing sensitive internal traffic. The organization underestimated the value of SSL due to the perceived complexity of managing custom certificates across multiple systems.</p>
 <p>Collaborated with web developers to obtain a wildcard SSL certificate aligned with the organization’s domain, eliminating browser warnings and enabling encrypted communication without per-machine certificate installation.</p>
-<p>Built an Ansible playbook to centrally deploy and renew SSL certificates across multiple internal web applications—including the inventory system, ticketing platform, and staff intranet—with a single execution. This ensured consistent HTTPS enforcement and simplified certificate lifecycle management.</p>
+<p>Built an Ansible playbook to centrally deploy and renew SSL certificates across multiple internal web applications...including the inventory system, ticketing platform, and staff intranet...with a single execution. This ensured consistent HTTPS enforcement and simplified certificate lifecycle management.</p>
 <p>As the environment evolved, the applications were consolidated behind HAProxy, and the automation was extended to update certificates and reload services centrally.</p>
 <p><strong>Key highlights:</strong></p>
 <ul>

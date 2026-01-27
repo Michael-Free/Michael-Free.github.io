@@ -150,21 +150,21 @@
 <h3 id="virtualization-containers">Virtualization &amp; Containers</h3>
 <p>My homelab leverages virtualization and containerization to simulate complex environments, test deployments, and experiment with architectures that would be difficult or costly elsewhere. I work with technologies including Kubernetes, LXD/LXC, Docker, and Ceph, enabling flexible and resilient infrastructure for both learning and practical projects.</p>
 <h2 id="homelab-approach">HomeLab Approach</h2>
-<p>I didn’t start with perfect hardware—and that’s the point. My homelab began with an old PC and grew over time, expanding with inherited appliances, like a NAS from my father, and recently-modern PCs I rescued from being discarded. It’s never been about having the latest or fastest equipment—it’s about the journey.</p>
+<p>I didn’t start with perfect hardware...and that’s the point. My homelab began with an old PC and grew over time, expanding with inherited appliances, like a NAS from my father, and recently-modern PCs I rescued from being discarded. It’s never been about having the latest or fastest equipment...it’s about the journey.</p>
 <p>A homelab doesn’t need to be career-driven. It can be about curiosity, convenience, or just experimenting for fun. I don’t need 1ms latency or enterprise-grade performance; I just need a space to meet my digital needs and explore ideas freely.</p>
 <p>For me, the mentality is simple: Why not?</p>
 <h2 id="evolution-of-the-homelab">Evolution of the HomeLab</h2>
 <h3 id="from-proxmox-to-microcloud">From Proxmox to MicroCloud</h3>
-<p>My homelab journey began with Proxmox VE. Having used it in a professional environment, it felt familiar and worked reliably right out of the box. It’s also the platform most commonly recommended across YouTube and homelab communities when people are just getting started—and for good reason.</p>
+<p>My homelab journey began with Proxmox VE. Having used it in a professional environment, it felt familiar and worked reliably right out of the box. It’s also the platform most commonly recommended across YouTube and homelab communities when people are just getting started...and for good reason.</p>
 <p>Over time, though, I realized my goals had outgrown simple VM management. Hosting virtual machines directly on my primary network quickly became cumbersome: managing individual public IPs, firewall rules, SSL termination, and service exposure added unnecessary complexity. While Proxmox does support clustering, I found that once I started working more heavily with containers, its customized Linux kernel and LXC implementation limited the experience more than I expected.</p>
-<p>What I really wanted was hands-on experience with clustering and a more cloud-style infrastructure—something that aligned closely with real-world Linux environments and skills I could transfer beyond the homelab.</p>
+<p>What I really wanted was hands-on experience with clustering and a more cloud-style infrastructure...something that aligned closely with real-world Linux environments and skills I could transfer beyond the homelab.</p>
 <p>I accidentally stumbled upon Canonical’s Ubuntu MicroCloud, and it immediately felt like home. It gave me fine-grained control over isolated networks, ingress and egress traffic, and service exposure. Containers and virtual machines could each live on their own isolated networks, and I could selectively expose services only when and how I needed to.</p>
-<p>Built on stock Ubuntu and leveraging LXD, MicroCeph, and MicroOVN, MicroCloud offers seamless clustering with minimal overhead. It’s lightweight, scales easily, and runs exceptionally well on low-power and ARM hardware—making it an ideal foundation for experimentation with modern, scalable infrastructure.</p>
+<p>Built on stock Ubuntu and leveraging LXD, MicroCeph, and MicroOVN, MicroCloud offers seamless clustering with minimal overhead. It’s lightweight, scales easily, and runs exceptionally well on low-power and ARM hardware...making it an ideal foundation for experimentation with modern, scalable infrastructure.</p>
 <h3 id="microcloud-over-proxmox">MicroCloud over Proxmox</h3>
 <ol>
 <li>
 <p>Standard Linux First
-MicroCloud runs on stock Ubuntu Server. Every tool, workflow, and troubleshooting step maps directly to real-world Linux environments. There’s no walled garden—just Linux.</p>
+MicroCloud runs on stock Ubuntu Server. Every tool, workflow, and troubleshooting step maps directly to real-world Linux environments. There’s no walled garden...just Linux.</p>
 </li>
 <li>
 <p>True Hyper-Converged Clustering
@@ -221,8 +221,8 @@ With native support for cloud-init and seamless integration with tools like Ansi
 <p>By hosting curated offline archives within the homelab, this service ensures continued access to useful reference and educational materials during extended connectivity outages. This project emphasizes resilience-focused infrastructure design, thoughtful adoption of lesser-known technologies, and practical problem-solving beyond typical self-hosted services.</p>
 <h3 id="internal-debian-repository-mirror">Internal Debian Repository Mirror</h3>
 <p>A privately hosted internal Debian package repository mirror, accessible only within the homelab and intentionally not exposed to the public internet. This mirror caches and serves Debian packages locally, allowing systems to install and update software without relying on external connectivity.</p>
-<p>This project was inspired by the Canada-wide Rogers outage, during which extended internet downtime revealed an unexpected dependency: even basic tasks—such as playing a DVD on a computer—required downloading additional software despite having physical media available. The experience highlighted how modern systems often assume constant internet access.</p>
-<p>In response, this mirror was implemented to ensure continued access to essential system and media software during network outages, improving overall infrastructure resilience. Beyond availability, the project also served as a practical exercise in repository hosting, package indexing, and secure internal distribution—knowledge directly applicable to maintaining custom software repositories should the need arise in the future.</p>
+<p>This project was inspired by the Canada-wide Rogers outage, during which extended internet downtime revealed an unexpected dependency: even basic tasks...such as playing a DVD on a computer...required downloading additional software despite having physical media available. The experience highlighted how modern systems often assume constant internet access.</p>
+<p>In response, this mirror was implemented to ensure continued access to essential system and media software during network outages, improving overall infrastructure resilience. Beyond availability, the project also served as a practical exercise in repository hosting, package indexing, and secure internal distribution...knowledge directly applicable to maintaining custom software repositories should the need arise in the future.</p>
 <p>This service demonstrates an understanding of software supply chains, offline-first design, and long-term infrastructure reliability, rather than simple service hosting</p></div>
             </div>
         </div>
