@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        <link rel="canonical" href="https://michaelfree.github.io/projects/homelab.html">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Home Lab - Michael Free</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/docco.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">Michael Free</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../index.html" class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../about.html" class="nav-link">About</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../experience.html" class="nav-link">Experience</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Projects</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="powershell.html" class="dropdown-item">Powershell</a>
+</li>
+                                    
+<li>
+    <a href="python.html" class="dropdown-item">Python</a>
+</li>
+                                    
+<li>
+    <a href="shellscripts.html" class="dropdown-item">Shell Scripts</a>
+</li>
+                                    
+<li>
+    <a href="ansible.html" class="dropdown-item">Ansible</a>
+</li>
+                                    
+<li>
+    <a href="homelab.html" class="dropdown-item active" aria-current="page">Home Lab</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../contact.html" class="nav-link">Connect</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="ansible.html" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../contact.html" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#homelab" class="nav-link">HomeLab</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#homelab-use" class="nav-link">HomeLab Use</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#homelab-approach" class="nav-link">HomeLab Approach</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#evolution-of-the-homelab" class="nav-link">Evolution of the HomeLab</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#what-i-host" class="nav-link">What I Host</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="homelab">HomeLab</h1>
+<p>I started a homelab because I wanted a space where I could learn by doing, without limits, approvals, or risk to production systems. This is essentially a personal space to experiment, break things, rebuild them, and understand why they work the way they do.</p>
+<p>Early on, I learned an important lesson: define the goal first. It’s easy to get caught up buying powerful hardware “just in case,” but a homelab is most effective when it grows to meet real needs. Building only what you need keeps it focused, affordable, and intentional.</p>
+<p>Beyond the technical side, there’s also genuine satisfaction in it. Designing and maintaining systems that actually do something useful, espeically for my family, gives me great satisifaction. Even if it's on a small scale... it scratches both my creative and problem-solving itch.</p>
+<h2 id="homelab-use">HomeLab Use</h2>
+<h3 id="learning-skill-development">Learning &amp; Skill Development</h3>
+<p>The homelab gives me a safe environment to sharpen real-world IT skills. Whether it’s networking concepts that map to certifications, system administration, automation, or troubleshooting, I can test ideas without fear of consequences.  Let's be honest here, if my child can't watch the latest episode of Bluey, or printing is disrupted for a couple hours, the only blow back I am going to face is from my spouse  during that time. In reality, I fear my spouse more than I fear any manager or CEO.</p>
+<h3 id="self-hosting-control">Self-Hosting &amp; Control</h3>
+<p>One of the biggest motivators was reclaiming control from large cloud providers. Hosting my own services means understanding exactly where my data lives, how it’s secured, and how it’s accessed.  It enables me to employ tangible concepts that can be used in the workplace, especially in those rare edge-cases.</p>
+<h3 id="media-storage-and-backups">Media, Storage, and Backups</h3>
+<p>My homelab serves as the backbone for media delivery, centralized storage, and data protection. Media services like Jellyfin and Plex run alongside a storage architecture designed for resiliency, scalability, and full ownership of my data.</p>
+<p>Storage is distributed across three nodes using Ceph, providing fault tolerance and high availability for workloads that require it. For large files and media libraries, I also maintain a dedicated Network Attached Storage (NAS), optimized for capacity and throughput.</p>
+<p>The NAS plays a critical role in my backup strategy. Containers, virtual machines, and other essential workloads are regularly backed up to it, and critical data is synchronized with cloud providers such as OneDrive and Google Drive. This layered approach effectively implements a 3-2-1-style backup strategy, ensuring data remains protected even in the event of catastrophic hardware or site failure. </p>
+<h3 id="services-experiments">Services &amp; Experiments</h3>
+<p>My homelab hosts a variety of services: from personal websites and internal tools to smart home automation and network services like printing and scanning. It’s a sandbox where I can run workloads that would normally live in someone else’s cloud… and save my credit card in the process. Some services, like my print and scanning servers, simply can’t run in a public cloud, making self-hosting the only practical option.</p>
+<h3 id="virtualization-containers">Virtualization &amp; Containers</h3>
+<p>My homelab leverages virtualization and containerization to simulate complex environments, test deployments, and experiment with architectures that would be difficult or costly elsewhere. I work with technologies including Kubernetes, LXD/LXC, Docker, and Ceph, enabling flexible and resilient infrastructure for both learning and practical projects.</p>
+<h2 id="homelab-approach">HomeLab Approach</h2>
+<p>I didn’t start with perfect hardware—and that’s the point. My homelab began with an old PC and grew over time, expanding with inherited appliances, like a NAS from my father, and recently-modern PCs I rescued from being discarded. It’s never been about having the latest or fastest equipment—it’s about the journey.</p>
+<p>A homelab doesn’t need to be career-driven. It can be about curiosity, convenience, or just experimenting for fun. I don’t need 1ms latency or enterprise-grade performance; I just need a space to meet my digital needs and explore ideas freely.</p>
+<p>For me, the mentality is simple: Why not?</p>
+<h2 id="evolution-of-the-homelab">Evolution of the HomeLab</h2>
+<h3 id="from-proxmox-to-microcloud">From Proxmox to MicroCloud</h3>
+<p>My homelab journey began with Proxmox VE. Having used it in a professional environment, it felt familiar and worked reliably right out of the box. It’s also the platform most commonly recommended across YouTube and homelab communities when people are just getting started—and for good reason.</p>
+<p>Over time, though, I realized my goals had outgrown simple VM management. Hosting virtual machines directly on my primary network quickly became cumbersome: managing individual public IPs, firewall rules, SSL termination, and service exposure added unnecessary complexity. While Proxmox does support clustering, I found that once I started working more heavily with containers, its customized Linux kernel and LXC implementation limited the experience more than I expected.</p>
+<p>What I really wanted was hands-on experience with clustering and a more cloud-style infrastructure—something that aligned closely with real-world Linux environments and skills I could transfer beyond the homelab.</p>
+<p>I accidentally stumbled upon Canonical’s Ubuntu MicroCloud, and it immediately felt like home. It gave me fine-grained control over isolated networks, ingress and egress traffic, and service exposure. Containers and virtual machines could each live on their own isolated networks, and I could selectively expose services only when and how I needed to.</p>
+<p>Built on stock Ubuntu and leveraging LXD, MicroCeph, and MicroOVN, MicroCloud offers seamless clustering with minimal overhead. It’s lightweight, scales easily, and runs exceptionally well on low-power and ARM hardware—making it an ideal foundation for experimentation with modern, scalable infrastructure.</p>
+<h3 id="microcloud-over-proxmox">MicroCloud over Proxmox</h3>
+<ol>
+<li>
+<p>Standard Linux First
+MicroCloud runs on stock Ubuntu Server. Every tool, workflow, and troubleshooting step maps directly to real-world Linux environments. There’s no walled garden—just Linux.</p>
+</li>
+<li>
+<p>True Hyper-Converged Clustering
+Clustering isn’t an add-on; it’s the core design. Storage and networking scale automatically as new nodes are introduced, without bolting on extra layers.</p>
+</li>
+<li>
+<p>Ideal for Small, Mixed Hardware
+From mini PCs and repurposed hardware to Raspberry Pis, MicroCloud performs well where heavier platforms begin to feel oversized.</p>
+</li>
+<li>
+<p>Containers as the Primary Abstraction
+LXD system containers are lightweight, fast, and well-suited for Linux services. Virtual machines remain available when full isolation or alternate operating systems are required.</p>
+</li>
+<li>
+<p>DevOps-Friendly by Design
+With native support for cloud-init and seamless integration with tools like Ansible and Terraform, MicroCloud aligns naturally with an infrastructure-as-code approach rather than a GUI-first workflow.</p>
+</li>
+</ol>
+<h2 id="what-i-host">What I Host</h2>
+<h3 id="gitea">Gitea</h3>
+<p>Self-hosted Git service used for source control, issue tracking, and project collaboration. Gitea provides a lightweight alternative to hosted Git platforms, allowing full control over repositories, authentication, and integrations. In the homelab, it serves as the central source of truth for automation scripts, infrastructure code, and personal projects.</p>
+<p>The platform is complemented by self-hosted Gitea Actions runners, enabling CI/CD workflows to execute entirely within the homelab. These runners are used to build, test, and validate code, run automation checks, and prototype deployment pipelines without reliance on external CI providers, reinforcing a fully self-contained and reproducible development workflow.</p>
+<h3 id="haproxy">HAProxy</h3>
+<p>Layer 4/7 load balancer and reverse proxy responsible for routing inbound traffic to internal services. HAProxy provides TLS termination, virtual host routing, and a single entry point for web-based applications. This setup mirrors real-world edge and ingress architectures used in production environments.</p>
+<h3 id="jellyfin">Jellyfin</h3>
+<p>Self-hosted media server for managing and streaming video content across the network. Jellyfin is used to centralize media storage while maintaining full ownership of data without reliance on external streaming platforms. It also serves as a testbed for storage performance, transcoding, and service reliability.</p>
+<h3 id="ollama">Ollama</h3>
+<p>Local AI inference service used to run large language models on-premises. Ollama allows experimentation with AI workloads without sending data to third-party cloud providers. In the homelab, it’s used to explore GPU/CPU resource allocation, container isolation, and emerging AI infrastructure patterns.</p>
+<h3 id="print-server">Print Server</h3>
+<p>Virtual machine providing centralized network printing services across multiple subnets and protocols. Running as a full VM to support device drivers and broader OS compatibility, it integrates both IPv4 and IPv6 networking. This system reflects real enterprise requirements where containers are insufficient due to hardware or driver constraints.</p>
+<h3 id="semaphore">Semaphore</h3>
+<p>Ansible Semaphore UI instance used to orchestrate and schedule automation jobs. It provides a controlled interface for running playbooks, managing inventories, and tracking execution history. In the homelab, Semaphore bridges infrastructure-as-code practices with repeatable operational workflows.</p>
+<h3 id="wekan">Wekan</h3>
+<p>Self-hosted Kanban board used for task tracking, project planning, and workflow visualization. Wekan supports personal productivity as well as structured project management, and serves as another example of replacing SaaS tools with self-hosted alternatives.</p>
+<h3 id="home-assistant">Home Assistant</h3>
+<p>Home automation platform used to centralize and automate smart home devices, sensors, and services. Home Assistant will integrate lighting, power monitoring, media playback, and environmental sensors into a single, locally controlled system without dependence on cloud-based vendor platforms.</p>
+<p>In the homelab, Home Assistant is being introduced as both a practical automation tool and a systems integration exercise, tying together networking, service discovery, container orchestration, and event-driven automation. It will also serve as a real-world example of stateful services, persistent storage, and long-running workloads within the MicroCloud/LXD environment.</p>
+<h3 id="openwrt-router-firewall-appliance">OpenWRT Router / Firewall Appliance</h3>
+<p>Custom-built network edge device running an OpenWRT router on an x86 PC equipped with nine network interfaces. This system functions as the primary router, firewall, and internal switching fabric for the homelab, providing full control over traffic flow between internal networks, services, and external connectivity.</p>
+<p>Beyond basic routing, the appliance hosts additional network services including stateful firewalling, VLAN segmentation, and a WireGuard VPN, enabling secure remote access to internal services. Running OpenWRT on general-purpose hardware allows for flexibility, advanced customization, and enterprise-style networking features that exceed typical consumer router capabilities.</p>
+<p>This setup serves as a hands-on platform for learning and validating real-world networking concepts such as segmentation, zero-trust access patterns, VPN design, and firewall rule management, while acting as a stable foundation for the rest of the homelab infrastructure.</p>
+<h3 id="immich">Immich</h3>
+<p>Self-hosted photo and video management platform used for automatic backup, organization, and browsing of personal media. Immich provides a modern, privacy-focused alternative to cloud photo services, offering features such as mobile uploads, metadata indexing, and timeline-based browsing.</p>
+<p>Within the homelab, Immich is used to evaluate storage performance, database-backed services, and media lifecycle management while maintaining full control over personal data. It also serves as a real-world workload for testing backups, snapshot strategies, and storage scaling within the MicroCloud/LXD environment.</p>
+<h3 id="podgrab">Podgrab</h3>
+<p>Automated podcast aggregation and download service that fetches, organizes, and archives podcast episodes from subscribed feeds. Podgrab runs as a lightweight, always-on service that ensures episodes are captured and stored locally without reliance on third-party streaming platforms.</p>
+<p>In the homelab, Podgrab supports the broader self-hosting and data ownership philosophy, while acting as a simple but effective example of scheduled jobs, persistent storage, and low-resource containerized services.</p>
+<h3 id="kubernetes">Kubernetes</h3>
+<p>A dedicated virtual machine designed to host a Kubernetes cluster for container orchestration, service deployment, and experimentation with cloud-native architectures. This VM will provide a sandboxed environment to test multi-container applications, CI/CD pipelines, scaling strategies, and service networking, all within the homelab.</p>
+<p>The Kubernetes VM will allow hands-on experience with container scheduling, Helm charts, persistent volumes, and cluster monitoring, bridging the gap between single-node LXD containers and real-world distributed systems. It is also intended to serve as a platform for running microservices and experimental workloads without affecting existing stable services.</p>
+<h3 id="kiwix-offline-knowledge-server">Kiwix Offline Knowledge Server</h3>
+<p>A self-hosted Kiwix server, where Kiwix is an open-source platform that enables offline access to websites by distributing them as compressed, searchable archives (ZIM files). It is commonly used to mirror resources such as Wikipedia, Python Documentation, and other useful content for use without an active internet connection.</p>
+<p>This service was implemented after learning about Kiwix and recognizing its real-world value following the Rogers nationwide internet outage in Canada, which disrupted internet access for a significant portion of the country. The outage highlighted the fragility of always-online assumptions and motivated the creation of a local, resilient knowledge base.</p>
+<p>By hosting curated offline archives within the homelab, this service ensures continued access to useful reference and educational materials during extended connectivity outages. This project emphasizes resilience-focused infrastructure design, thoughtful adoption of lesser-known technologies, and practical problem-solving beyond typical self-hosted services.</p>
+<h3 id="internal-debian-repository-mirror">Internal Debian Repository Mirror</h3>
+<p>A privately hosted internal Debian package repository mirror, accessible only within the homelab and intentionally not exposed to the public internet. This mirror caches and serves Debian packages locally, allowing systems to install and update software without relying on external connectivity.</p>
+<p>This project was inspired by the Canada-wide Rogers outage, during which extended internet downtime revealed an unexpected dependency: even basic tasks—such as playing a DVD on a computer—required downloading additional software despite having physical media available. The experience highlighted how modern systems often assume constant internet access.</p>
+<p>In response, this mirror was implemented to ensure continued access to essential system and media software during network outages, improving overall infrastructure resilience. Beyond availability, the project also served as a practical exercise in repository hosting, package indexing, and secure internal distribution—knowledge directly applicable to maintaining custom software repositories should the need arise in the future.</p>
+<p>This service demonstrates an understanding of software supply chains, offline-first design, and long-term infrastructure reliability, rather than simple service hosting</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
